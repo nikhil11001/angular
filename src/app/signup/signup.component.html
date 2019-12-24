@@ -1,0 +1,34 @@
+<div class="registration-page">
+    <div class="jumbotron">
+       <h5 class="margin-20">Sign Up</h5>
+       <form #frm="ngForm" (ngSubmit)="userSignup(frm)"> 
+       <div class="row margin-20">
+            <input type="text" class="form-control" [(ngModel)]="firstName" name="firstName" [value]="firstName" placeholder="First Name" />
+        {{firstName}}
+        </div>
+        <div class="row margin-20">
+            <input type="text" class="form-control" [(ngModel)]="lastName" name="lastName" [value]="lastName" placeholder="Last Name" />
+        </div>
+        <div class="row margin-20">
+            <input type="text" class="form-control" [(ngModel)]="emailId" name="emailId" [value]="emailId" placeholder="EmailId" />
+        </div>
+        <div class="row margin-20">
+            <input type="text" class="form-control" [(ngModel)]="address" name="address" [value]="address" placeholder="Address" />
+        </div>
+        <div class="row margin-20">
+            <input type="text" class="form-control" [(ngModel)]="dob" [value]="dateOfBirth" name="dateOfBirth" placeholder="DOB" />
+        </div>
+        <div class="row margin-20">
+            <input type="text" class="form-control" [(ngModel)]="company" [value]="company" name="company" placeholder="Company" />
+        </div>
+        <div class="row margin-20">
+            <input type="password" class="form-control" [(ngModel)]="password" [value]="password" name="password" placeholder="Password" />
+        </div>
+
+        <div class="row">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+        </form>
+        </div>
+
+</div>
