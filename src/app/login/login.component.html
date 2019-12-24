@@ -3,6 +3,7 @@
                 <div *ngIf="showAlert" class="alert alert-danger" style="margin-top: 10px;" role="alert">
                         {{alertMsg}}
                 </div>
+                
                 <div class="jumbotron" style="margin-top: 10px">
                         <form #frm="ngForm" (ngSubmit)="frm.form.valid && onSubmit() && userLogin(frm)" name="form">
                                 <div class="row margin-20 form-group">
