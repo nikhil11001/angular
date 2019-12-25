@@ -47,11 +47,18 @@ export class HomeComponent implements OnInit {
 
 
   deleteEmployeeData(obj) {
-    this.employeeService.deleteEmployee(obj.employeeId).then(()=>{
-      this.getAllEmployeeData();
-    }).catch((error)=>{
-      console.log(error)
-    })
+    if(confirm("You want to delete employee")){
+      console.log("confirm YES")
+      this.employeeService.deleteEmployee(obj.employeeId).then(()=>{
+        this.getAllEmployeeData();
+      }).catch((error)=>{
+        console.log(error)
+      })
+    }else{
+      console.log("confirm NO")
+      return;
+    }
+   
   }
 
   logout(){
