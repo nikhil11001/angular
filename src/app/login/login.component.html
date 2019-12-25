@@ -1,10 +1,11 @@
 <div>
         
         <div class="login-page">
-                <div *ngIf="showAlert" class="alert alert-danger" style="margin-top: 10px;" role="alert">
-                        {{alertMsg}}
-                </div>
+               
                 <div class="jumbotron" style="margin-top: 10px">
+                        <div *ngIf="showAlert" class="alert alert-danger"  role="alert">
+                                {{alertMsg}}
+                        </div>
                         <form #frm="ngForm" (ngSubmit)="frm.form.valid && userLogin(frm)" name="form">
                                 <div class="row margin-20 form-group">
                                         <label>Email ID</label>
