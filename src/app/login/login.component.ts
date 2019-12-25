@@ -25,40 +25,38 @@ export class LoginComponent implements OnInit {
       this.showAlert = true;
       this.isEmailValid = false;
       this.alertMsg = "Enter valid email id"
+      return;
     } else {
       this.showAlert = false;
       this.isEmailValid = true;
       this.alertMsg = ""
     }
-    console.log("isEmailValid-", this.isEmailValid);
 
   }
 
   userLogin(data) {
     this.checkEmailValdation(data.value.userName)
     if (data.value.userName === "" || data.value.password === "") {
-      console.log("Empty condtion true")
       this.showAlert = true;
       this.alertMsg = "Please check the fields"
       return;
     }
     else {
-      if(this.isEmailValid===true){
-      console.log("Empty condtion false")
-      this.showAlert = false;
-      this.alertMsg = "";
-      this.response = this.loginService.login(data.value)
-      console.log("Response==>", this.response)
-      this.loginService.login(data.value).then((data) => {
-        sessionStorage.setItem("user", JSON.stringify(data));
-        console.log("login response", data);
-        this.response = data;
-        this.router.navigate(['/home']);
-      }).catch((error) => {
-        console.error(error);
-      })
+      if (this.isEmailValid === true) {
+        this.response = this.loginService.login(data.value)
+        this.loginService.login(data.value).then((data) => {
+          sessionStorage.setItem("user", JSON.stringify(data));
+          this.response = data;
+          this.router.navigate(['/home']);
+        }).catch((error) => {
+          console.log("Error==>", error);
+          console.log("Error==>", error.statusText || error.errorMessage);
+          let errorTxt = error.errorMessage || error.statusText;
+          this.showAlert = true;
+          this.alertMsg = errorTxt;
+        })
+      }
     }
-  }
   }
 
 

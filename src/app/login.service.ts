@@ -17,27 +17,13 @@ export class LoginService {
     }
    return this.http.post(this.url,this.body).toPromise().then((response) => {
       if (response != null) {
-        console.log("res", response)
         return response;
       }
       else {
-        console.log('Access Denied');
+        console.log('ERROR IN login() service');
         return null;
       }
     });
-
-    // return this.http.post(`http://192.168.43.249:8080/manageemployeedetail/manager/login`, {
-    //   userName: data.userName, password: data.password
-    // }).toPromise().then((response) => {
-    //   if (response != null) {
-    //     console.log("res", response)
-    //     return response;
-    //   }
-    //   else {
-    //     console.log('Access Denied');
-    //     return null;
-    //   }
-    // });
   }
   constructor(private http: HttpClient) { }
 }

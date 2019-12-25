@@ -7,12 +7,14 @@
                 <div class="jumbotron" style="margin-top: 10px">
                         <form #frm="ngForm" (ngSubmit)="frm.form.valid && userLogin(frm)" name="form">
                                 <div class="row margin-20 form-group">
+                                        <label>Email ID</label>
                                         <input type="email" name="userName" class="form-control" value=""
-                                                placeholder="User Name" [ngModel]="userName" />
+                                                placeholder="Enter Email ID" [ngModel]="userName" />
                                 </div>
                                 <div class="row margin-20 form-group">
+                                        <label>Password</label>
                                         <input type="password" name="password" class="form-control" value=""
-                                                placeholder="Password" [ngModel]="password" />
+                                                placeholder="Enter Password" [ngModel]="password" />
                                 </div>
                                 <div class="row">
                                         <div class="col-md-6">

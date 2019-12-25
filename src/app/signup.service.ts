@@ -7,14 +7,12 @@ import { HttpClient } from '@angular/common/http';
 export class SignupService {
 
 signup(data){
-  console.log("SIGNUP==>",data)
  return this.http.post("http://192.168.43.249:8080/manageemployeedetail/manager/registration",data).toPromise().then((response)=>{
     if (response != null) {
-      console.log("res", response)
       return response;
     }
     else {
-      console.log('Access Denied');
+      console.log('ERORO IN signup() service');
       return null;
     }
   })

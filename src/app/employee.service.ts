@@ -17,7 +17,7 @@ export class EmployeeService {
         return response;
       }
       else {
-        console.log('Access Denied');
+        console.log('ERROR IN getAllEmployeeData() service');
         return null;
       }
     });
@@ -28,7 +28,7 @@ export class EmployeeService {
       if (response != null) {
         return response;
       } else {
-        console.log('Error in deleteEmployee');
+        console.log('Error in deleteEmployee() service');
         return null;
       }
     })
@@ -40,11 +40,10 @@ export class EmployeeService {
       {
         return this.http.put('http://192.168.43.249:8080/manageemployeedetail/employee/update/' + data.employeeId, data).toPromise().then((response) => {
           if (response != null) {
-            console.log("res", response)
             return response;
           }
           else {
-            console.log('Error in addEmployeeData');
+            console.log('Error in edit Employee Data service');
             return null;
           }
         });
@@ -52,11 +51,10 @@ export class EmployeeService {
     } else {
       return this.http.post(`http://192.168.43.249:8080/manageemployeedetail/employee/add`, data).toPromise().then((response) => {
         if (response != null) {
-          console.log("res", response)
           return response;
         }
         else {
-          console.log('Error in addEmployeeData');
+          console.log('Error in addEmployeeData service');
           return null;
         }
       });
