@@ -56,7 +56,8 @@ export class HomeComponent implements OnInit {
       this.employeeService.deleteEmployee(obj.employeeId).then(() => {
         this.getAllEmployeeData();
       }).catch((error) => {
-        console.log(error)
+        console.log("Delete Employee==>");
+        console.log("Error==>", error.statusText || error.errorMessage);
       })
     } else {
       console.log("DONOT DELETE EMPLOYEE")
@@ -116,7 +117,8 @@ export class HomeComponent implements OnInit {
         this.employeeService.addEmployeeData(form.value).then(() => {
           this.getAllEmployeeData();
         }).catch((error) => {
-          console.log(error)
+          console.log("Add or Update Employeer==>");
+          console.log("Error==>", error.statusText || error.errorMessage);
         })
         this.toogleModal();
       }
@@ -130,7 +132,8 @@ export class HomeComponent implements OnInit {
       this.employeeService.getAllEmployeeData(this.id).then((data) => {
         this.empolyeeData = data;
       }).catch((error) => {
-        console.error(error);
+        console.log("Error==>", error);
+        console.log("Error==>", error.statusText || error.errorMessage);
       })
     }
   }

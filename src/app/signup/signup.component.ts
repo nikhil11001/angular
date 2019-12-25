@@ -50,7 +50,8 @@ export class SignupComponent implements OnInit{
                 this.signupService.signup(frm.value).then(()=>{
                     this.router.navigate(['/']);
                 }).catch((error)=>{
-                    console.log(error)
+                    console.log("Error REGISTRATION==>");
+                    console.log("Error==>", error.statusText || error.errorMessage);
                 })
             }
         }

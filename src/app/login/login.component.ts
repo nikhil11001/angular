@@ -49,11 +49,8 @@ export class LoginComponent implements OnInit {
           this.response = data;
           this.router.navigate(['/home']);
         }).catch((error) => {
-          console.log("Error==>", error);
+          console.log("Login ERROR==>");
           console.log("Error==>", error.statusText || error.errorMessage);
-          let errorTxt = error.errorMessage || error.statusText;
-          this.showAlert = true;
-          this.alertMsg = errorTxt;
         })
       }
     }
