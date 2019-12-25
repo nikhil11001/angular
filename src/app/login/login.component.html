@@ -5,14 +5,10 @@
                         {{alertMsg}}
                 </div>
                 <div class="jumbotron" style="margin-top: 10px">
-                        <form #frm="ngForm" (ngSubmit)="frm.form.valid && onSubmit() && userLogin(frm)" name="form">
+                        <form #frm="ngForm" (ngSubmit)="frm.form.valid && userLogin(frm)" name="form">
                                 <div class="row margin-20 form-group">
                                         <input type="email" name="userName" class="form-control" value=""
                                                 placeholder="User Name" [ngModel]="userName" />
-                                        <div *ngIf="frm.submitted && userName.invalid" class="invalid-feedback">
-                                                <div *ngIf="userName.errors.email">Email must be a valid email address
-                                                </div>
-                                        </div>
                                 </div>
                                 <div class="row margin-20 form-group">
                                         <input type="password" name="password" class="form-control" value=""
